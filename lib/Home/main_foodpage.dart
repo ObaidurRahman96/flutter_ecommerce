@@ -1,4 +1,7 @@
+import 'package:e_commerce/Home/food_page_body.dart';
 import 'package:e_commerce/ui/colors.dart';
+import 'package:e_commerce/widgets/big_text.dart';
+import 'package:e_commerce/widgets/small_text.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -24,8 +27,13 @@ class _MainFoodPageState extends State<MainFoodPage> {
                   children: [
                     Column(
                       children: [
-                        Text("Country"),
-                        Text("City")
+                        BigText(text: "Bangladesh", color: AppColors.mainColor),
+                        Row(
+                          children: [
+                            SmallText(text: "Mymensingh", color: Colors.black54),
+                            Icon(Icons.arrow_drop_down_rounded)
+                          ],
+                        )
 
                       ],
                     ),
@@ -44,6 +52,7 @@ class _MainFoodPageState extends State<MainFoodPage> {
                 ),
               ),
             ),
+            FoodPageBody(),
           ],
         ),
     );
