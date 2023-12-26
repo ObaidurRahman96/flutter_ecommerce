@@ -1,10 +1,14 @@
+//import 'dart:html';
+
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:e_commerce/ui/colors.dart';
+import 'package:e_commerce/ui/dimensions.dart';
 import 'package:e_commerce/widgets/big_text.dart';
 import 'package:e_commerce/widgets/icon_and_text_widget.dart';
 import 'package:e_commerce/widgets/small_text.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class FoodPageBody extends StatefulWidget {
   const FoodPageBody({super.key});
@@ -17,7 +21,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
   PageController pageController= PageController(viewportFraction: 0.85);
   var _currPageValue=0.0;
   double _scaleFactor= 0.8;
-  double _height= 220;
+  double _height= Dimensions.pageViewContainer;
 
   @override
   void initState(){
@@ -38,11 +42,12 @@ void dispose(){
 
   @override
   Widget build(BuildContext context) {
+    //print("Current size is"+MediaQuery.of(context).size.height.toString());
     return Column(
       children: [
         Container(
           //color: Colors.redAccent,
-          height: 320,
+          height: Dimensions.pageView,
           child: PageView.builder(
               controller: pageController,
               itemCount: 5,
@@ -90,10 +95,10 @@ void dispose(){
       child: Stack(
         children: [
           Container(
-            height: 220,
-            margin: EdgeInsets.only(top:8, left: 10, right: 10),
+            height: Dimensions.pageViewContainer,
+            margin: EdgeInsets.only(top:Dimensions.width10, left:Dimensions.width10, right: Dimensions.width10),
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(30),
+              borderRadius: BorderRadius.circular(Dimensions.radius30),
               color: index.isEven ? Color(0xFF69c5df) : Color(0xFF92944cc),
               image: DecorationImage(
                   fit: BoxFit.cover,
@@ -104,10 +109,10 @@ void dispose(){
           Align(
             alignment:Alignment.bottomCenter,
             child: Container(
-              height: 120,
-              margin: EdgeInsets.only(left: 30, right: 30, bottom: 15),
+              height: Dimensions.pageViewTextContainer,
+              margin: EdgeInsets.only(left: Dimensions.width30, right: Dimensions.width30, bottom: Dimensions.height15),
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20),
+                borderRadius: BorderRadius.circular(Dimensions.radius20),
                 color: Colors.white,
                 boxShadow: [
                   BoxShadow(
@@ -127,12 +132,12 @@ void dispose(){
 
               ),
               child: Container(
-                padding: EdgeInsets.only(top: 15, left: 15,right: 15),
+                padding: EdgeInsets.only(top: Dimensions.height15, left: 15,right: 15),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     BigText(text: "Combo Burger With Drinks"),
-                    SizedBox(height: 5),
+                    SizedBox(height: Dimensions.height10),
                     Row(
                       children: [
                         Wrap(
@@ -146,7 +151,7 @@ void dispose(){
                         SmallText(text: 'Comments', color: Colors.black54),
                       ],
                     ),
-                    SizedBox(height: 20,),
+                    SizedBox(height:Dimensions.height20),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [

@@ -1,4 +1,5 @@
 import 'package:e_commerce/ui/colors.dart';
+import 'package:e_commerce/ui/dimensions.dart';
 import 'package:e_commerce/widgets/small_text.dart';
 import 'package:flutter/cupertino.dart';
 
@@ -15,7 +16,7 @@ class IconAndTextWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Icon(icon, color: iconColor,),
+        Icon(icon, color: iconColor,size: Dimensions.iconSize24,),
         SizedBox(width: 5,),
         SmallText(text: text,),
       ],
