@@ -11,6 +11,7 @@ class Dimensions{
   static double height10=screenHeight/84.4;
   static double height15=screenHeight/56.27;
   static double height20=screenHeight/42.2;
+  static double height30=screenHeight/28.13;
   static double height27=screenHeight/31.26;
   static double height45=screenHeight/18.76;
 
@@ -31,7 +32,14 @@ class Dimensions{
 
 //Icons Size
   static double iconSize24=screenHeight/35.17;
+  static double iconSize16=screenHeight/52.75;
 
+//ListView Size
+  static double listViewImgSize=screenWidth/3.25;
+  static double listviewTextContSize=screenWidth/3.9;
+
+//Popular Food
+  static double popularFoodImgSize=screenHeight/2.41;
 
 
 

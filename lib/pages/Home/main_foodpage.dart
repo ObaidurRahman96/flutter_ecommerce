@@ -1,4 +1,4 @@
-import 'package:e_commerce/Home/food_page_body.dart';
+import 'package:e_commerce/pages/Home/food_page_body.dart';
 import 'package:e_commerce/ui/colors.dart';
 import 'package:e_commerce/ui/dimensions.dart';
 import 'package:e_commerce/widgets/big_text.dart';
@@ -19,6 +19,7 @@ class _MainFoodPageState extends State<MainFoodPage> {
     return Scaffold(
         body: Column(
           children: [
+            //showing the header
             Container(
               child: Container(
                 margin: EdgeInsets.only(top:Dimensions.height27,bottom: Dimensions.height10),
@@ -53,7 +54,10 @@ class _MainFoodPageState extends State<MainFoodPage> {
                 ),
               ),
             ),
-            FoodPageBody(),
+            //showing the body
+            Expanded(child: SingleChildScrollView(
+              child: FoodPageBody(),
+            )),
           ],
         ),
     );

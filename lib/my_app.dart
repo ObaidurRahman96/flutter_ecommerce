@@ -1,5 +1,6 @@
-import 'package:e_commerce/Home/main_foodpage.dart';
 import 'package:e_commerce/homepage.dart';
+import 'package:e_commerce/pages/Home/main_foodpage.dart';
+import 'package:e_commerce/pages/food/popular_food_detail.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       home: const SafeArea(
-        child:MainFoodPage(),
+        child:PopularFoodDetail(),
       ),
     );
   }
