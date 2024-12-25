@@ -1,5 +1,6 @@
 import 'package:e_commerce/ui/colors.dart';
 import 'package:e_commerce/ui/dimensions.dart';
+import 'package:e_commerce/widgets/app_column.dart';
 import 'package:e_commerce/widgets/app_icon.dart';
 import 'package:e_commerce/widgets/big_text.dart';
 import 'package:e_commerce/widgets/icon_and_text_widget.dart';
@@ -13,6 +14,7 @@ class PopularFoodDetail extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: Stack(
         children: [
           Positioned (
@@ -62,41 +64,55 @@ class PopularFoodDetail extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    BigText(text: "Combo Burger With Drinks"),
-                    SizedBox(height: Dimensions.height10),
-                    Row(
-                      children: [
-                        Wrap(
-                          children: List.generate(5, (index) => Icon(Icons.star,color: AppColors.mainColor,size: 15,) ),
-                        ),
-                        SizedBox(width: 10),
-                        SmallText(text: '4.5', color: Colors.black54),
-                        SizedBox(width: 10),
-                        SmallText(text: '1289', color: Colors.black54),
-                        SizedBox(width: 10),
-                        SmallText(text: 'Comments', color: Colors.black54),
-                      ],
-                    ),
-                    SizedBox(height:Dimensions.height20),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        IconAndTextWidget(icon: Icons.circle_sharp,
-                          text: "Normal",
-                          iconColor: AppColors.iconColor1,),
-                        IconAndTextWidget(icon: Icons.location_on,
-                            text: "1.7KM",
-                            iconColor: AppColors.mainColor),
-                        IconAndTextWidget(icon: Icons.access_time_rounded,
-                            text: "32 min",
-                            iconColor: AppColors.iconColor2)
-                      ],
-                    )
+                    AppColumn(text: "Combo Burger With Drinks",),
+                    SizedBox(height: Dimensions.height20,),
+                    BigText(text: "Introduce")
                   ],
-                ),
+                )
 
           ))
         ],
+      ),
+    //Bottom Navigation View
+      bottomNavigationBar: Container(
+        height: Dimensions.bottomHeightBar,
+        padding: EdgeInsets.only(top: Dimensions.height30, bottom: Dimensions.height30,left: Dimensions.width20, right: Dimensions.width20),
+        decoration: BoxDecoration(
+          color: AppColors.buttonBackgroundColor,
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(Dimensions.radius20*2),
+            topRight: Radius.circular(Dimensions.radius20*2)
+          )
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Container(
+              padding: EdgeInsets.only(top: Dimensions.height20/2, bottom: Dimensions.height20/2, left: Dimensions.width20, right: Dimensions.width20),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(Dimensions.radius20),
+                color: Colors.white
+              ),
+              child: Row(
+                children: [
+                  Icon(Icons.remove, color: AppColors.signColor,),
+                  SizedBox(width: Dimensions.width10/2,),
+                  BigText(text: "0"),
+                  SizedBox(width: Dimensions.width10/2,),
+                  Icon(Icons.add, color: AppColors.signColor,)
+                ],
+              ),
+            ),
+            Container(
+              padding: EdgeInsets.only(top: Dimensions.height20/2, bottom: Dimensions.height20/2, left: Dimensions.width20, right: Dimensions.width20),
+              child: BigText(text: "\$10 | Add to cart", color: Colors.white,),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(Dimensions.radius20),
+                color: AppColors.mainColor
+              ),
+            )
+          ],
+        ),
       ),
 
     );
